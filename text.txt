@@ -1,0 +1,3 @@
+Hi, this is the file for reading and writing.
+It has some lines written in it.
+It is very small.
