@@ -100,6 +100,15 @@ set2 = {2, 5, 6, 8}
 print(set1.union(set2))
 print(set1.intersection(set2))
 print(set1.difference(set2))
+"""
+In sets, the difference between "remove" and "discard" is that remove will give error 
+if a certain value is not in set and is wanted to be removed. On the other 
+hand, discard will not give error and will simply return the set. 
+
+If you want to  check difference between two sets, difference method is used.
+but if you want to consecutively check difference between 3 or more sets, then use symmetric_difference method. 
+"""
+
 
 
 # ------------Dictionary-----------
