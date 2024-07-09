@@ -1,5 +1,7 @@
 from mod import adder
 import os
+import datetime
+import pytz
 
 # First Command (print)
 print("Hello")
@@ -188,3 +190,15 @@ print(sentence)
 # ------------------------OS Library---------------------------
 print(os.getcwd())
 print(os.listdir())
+
+
+# -------------------------DateTime------------------------------
+dt_now = datetime.datetime.now(tz=pytz.UTC)
+print(dt_now)
+
+dt_pk = dt_now.astimezone(pytz.timezone('ASIA/Karachi'))
+print(dt_pk)
+
+# for tz in pytz.all_timezones:
+#     print(tz)
+
