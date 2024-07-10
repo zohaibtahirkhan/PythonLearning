@@ -35,6 +35,9 @@
             <li class="list-group-item list-group-item-light">etc</li>
           </ul>
         </p>
+          {% if request.user.is_authenticated %}
+          <a class="btn btn-outline-secondary" href="{% url 'post-create' %}">Create a new Post</a>
+          {% endif %}
       </div>
     </div>
   </div>
