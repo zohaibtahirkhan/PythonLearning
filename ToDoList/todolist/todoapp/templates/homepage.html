@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+
+<h1>Lists</h1>
+{% for list in lists %}
+{% if request.user == list.creator %}
+<ul class="list-group mb-4">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><a href="{% url 'tasks' list.id %}">{{ list.name }}</a></h5>
+            <p>{{ list.creator }}</p>
+            <p>{{ list.date_created }}</p>
+            <span>
+                {% if list.complete %}
+                    <b><span class="badge badge-success" style="color:#4BB543;">Completed</span></b>
+                {% else %}
+                    <a href="{% url 'mark-as-complete-list' list.id %}" class="btn btn-sm btn-outline-success">Mark as Complete</a>
+                {% endif %}
+                <a href="{% url 'update-list' list.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                <a href="{% url 'delete-list' list.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+            </span>
+        </li>
+</ul>
+{% endif %}
+{% endfor %}
+
+<a href="{% url 'new-list' %}" class="btn btn-primary">Add List</a>
+{% endblock %}
